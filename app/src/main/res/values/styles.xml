@@ -116,7 +116,6 @@
         <item name="listPreferredItemPaddingLeft">24dip</item>
         <item name="listPreferredItemPaddingRight">24dip</item>
         <item name="android:listDivider">@null</item>
-        <item name="android:windowCloseOnTouchOutside">@bool/abc_config_closeDialogWhenTouchOutside</item>
     </style>
     <style name="Dialog.Dark" parent="Theme.EDS.Dark">
         <item name="android:background">@android:color/transparent</item>
