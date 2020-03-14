@@ -5,6 +5,7 @@
 #include "com_sovworks_eds_fs_util_FDRandomAccessIO.h"
 
 #include <stdlib.h>
+#include <unistd.h>
 //#include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>

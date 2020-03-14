@@ -5,6 +5,7 @@
 
 #include "com_sovworks_eds_crypto_modes_CBC.h"
 #include <stdlib.h>
+#include <string.h>
 #include <android/log.h>
 #include "cbc.h"
 
@@ -138,7 +139,7 @@ void cbc_encrypt(cbc_context *context, uint8_t *data, int offset, int length, ui
             memcpy(block_iv, current_iv, CBC_BLOCK_SIZE);
         	if(left < file_block_size)
         		incr = left;        	
-            cbc_encrypt_block(cn->cipher, cur, incr, block_iv);
+            cbc_encrypt_block(cn->cipher, cur, (size_t)incr, block_iv);
 			if(incrementIV)
 				increment_iv(current_iv);
         }   
@@ -171,13 +172,12 @@ void cbc_decrypt(cbc_context *context, uint8_t *data, int offset, int length, ui
 	memcpy(iv, block_iv, CBC_BLOCK_SIZE);
 }
 
-JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *jvm, void *reserved)
-{
+jint JNI_OnLoad(JavaVM *jvm, void *reserved) {
 
 //#ifdef NOBFUSCATE/
 //	update_glob_mod();
 //#endif
-	return JNI_VERSION_1_2;
+    return JNI_VERSION_1_2;
 }
 
 

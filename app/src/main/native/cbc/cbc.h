@@ -20,5 +20,6 @@ typedef struct
 void cbc_encrypt(cbc_context *context, uint8_t *data, int offset, int length, uint8_t *iv, unsigned char incrementIV);
 void cbc_decrypt(cbc_context *context, uint8_t *data, int offset, int length, uint8_t *iv, unsigned char incrementIV);
 
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *jvm, void *reserved);
 
 #endif
